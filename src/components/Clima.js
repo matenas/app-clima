@@ -15,13 +15,13 @@ const Clima = ({result}) => {
             <div className="black-text">
                 <h2>El clima de {name} es:</h2>
                 <p className="temperatura">
-                    {celsiusNow} <span>&#x2103;</span>
+                    La temperatura actual es: {celsiusNow} <span>&#x2103;</span>
                 </p>
                 <p className="">
-                    {celsiusMax} <span>&#x2103;</span>
+                   La temperatura maxima esperada es de: {celsiusMax} <span>&#x2103;</span>
                 </p>
                 <p className="">
-                    {celsiusMin} <span>&#x2103;</span>
+                    La temperatura minima esperada es de: {celsiusMin} <span>&#x2103;</span>
                 </p>
             </div>
         </div>

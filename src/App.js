@@ -24,7 +24,7 @@ function App() {
   useEffect( () => {
     const callAPI = async () => {
       if(query) {
-        const apiKey = 'PASTE APIKEY';
+        const apiKey = '9e9c97052713c07e4d9fd92786bb3a29';
         const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}`;
 
         const response = await fetch(url);
@@ -33,7 +33,7 @@ function App() {
         setQuery(false);
 
         //detecta si hubo resultados en la consulta 
-        if(result.cod === '404') {
+        if(res.cod === '404') {
           setError(true);
         } else {
           setError(false);

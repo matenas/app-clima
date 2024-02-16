@@ -1,0 +1,21 @@
+# Este es un flujo de trabajo de GitHub Actions que se activa cuando se crea una issue en el repositorio
+name: Issue Created Workflow
+on:
+  issues:
+    types: [opened]
+jobs:
+  # Este trabajo envía un comentario a la issue creada con un mensaje de bienvenida
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment on issue
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Hola, gracias por crear esta issue. Estamos trabajando para resolverla lo antes posible.'
+            })
